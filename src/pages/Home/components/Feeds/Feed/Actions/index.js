@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import {  View, Text, } from 'react-native';
 
-import Feed from './Feed';
-
-export default class Feeds extends Component {
+export default class Actions extends Component {
   render() {
     return (
       <View>
-        <Feed />
+        <Text> Actions </Text>
       </View>
     );
   }
