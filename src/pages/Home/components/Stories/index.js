@@ -8,7 +8,7 @@ import Story from './Story';
 export default class Stories extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.headerStorie}>
           <Text style={styles.headerText}>Histórias</Text>
           <Text style={styles.headerText}><Icon name="caret-right" size={14} color="#222" /> Assistir a tudo</Text>
@@ -32,6 +32,11 @@ export default class Stories extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+    paddingBottom: 5,
+  },
   headerStorie: {
     flexDirection: 'row',
     alignItems: 'center',
