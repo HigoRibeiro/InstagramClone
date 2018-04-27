@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  View, Text, StyleSheet } from 'react-native';
+import {  View, Text, ScrollView, StyleSheet } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -13,7 +13,19 @@ export default class Stories extends Component {
           <Text style={styles.headerText}>Histórias</Text>
           <Text style={styles.headerText}><Icon name="caret-right" size={14} color="#222" /> Assistir a tudo</Text>
         </View>
-        <Story />
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.contentScrollView}
+        >
+          <Story visualized user='Eu'/>
+          <Story user='um.amigo'/>
+          <Story user='um.amigo'/>
+          <Story user='um.amigo'/>
+          <Story visualized user='um.amigo'/>
+          <Story user='um.amigo'/>
+          <Story user='um.amigo'/>
+        </ScrollView>
       </View>
     );
   }
@@ -31,5 +43,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: 'bold',
     color: '#222'
-  }
+  },
+  contentScrollView: {
+    paddingHorizontal: 3,
+  },
 });
