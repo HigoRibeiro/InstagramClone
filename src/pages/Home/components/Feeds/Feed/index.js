@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  View, Text, } from 'react-native';
+import {  View, StyleSheet } from 'react-native';
 
 import Header from './Header';
 import Image from './Image';
@@ -11,7 +11,7 @@ import Time from './Time';
 export default class Feed extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Header />
         <Image />
         <Actions />
@@ -22,3 +22,9 @@ export default class Feed extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 10,
+  },
+});
