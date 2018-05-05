@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import {  View, Text, StyleSheet } from 'react-native';
+import moment from 'moment';
 
 export default class Time extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>HÁ 9 MINUTOS</Text>
+        <Text style={styles.text}>
+        {
+          moment
+            .unix(this.props.created_time)
+            .startOf('hour')
+            .fromNow()
+        }
+        </Text>
       </View>
     );
   }
