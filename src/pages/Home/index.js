@@ -10,9 +10,6 @@ export default class Home extends Component {
       <ScrollView>
         <Stories />
         <Feeds />
-        <Feeds />
-        <Feeds />
-        <Feeds />
       </ScrollView>
     );
   }
