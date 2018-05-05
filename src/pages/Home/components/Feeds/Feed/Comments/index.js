@@ -2,13 +2,23 @@ import React, { Component } from 'react';
 import {  View, Text, StyleSheet } from 'react-native';
 
 export default class Comments extends Component {
+
+  renderCaption = () => {
+    const { caption: { text, from: { username } } } = this.props;
+    return (
+      <Text style={styles.user}>{username}
+        <Text style={styles.comment}> {text}</Text>
+      </Text>
+    )
+  }
   render() {
+
+    const { comments: { count } } = this.props;
+
     return (
       <View style={styles.container}>
-        <Text style={styles.user}>user
-          <Text style={styles.comment}> Essa é uma foto legal</Text>
-        </Text>
-        <Text style={styles.otherComments}>Ver todos os 10 comentários...</Text>
+        {this.props.caption && this.renderCaption()}
+        <Text style={styles.otherComments}>Ver todos os {count} comentário{ count === 1 ? '' : 's'}...</Text>
       </View>
     );
   }

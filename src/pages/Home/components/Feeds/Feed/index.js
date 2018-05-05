@@ -11,7 +11,7 @@ import Time from './Time';
 export default class Feed extends Component {
   render() {
 
-    const { user, images, likes } = this.props.feed;
+    const { user, images, likes, caption, comments } = this.props.feed;
 
     return (
       <View style={styles.container}>
@@ -19,7 +19,7 @@ export default class Feed extends Component {
         <Image images={images} />
         <Actions />
         <Likes likes={likes} />
-        <Comments />
+        <Comments caption={caption} comments={comments} />
         <Time />
       </View>
     );
