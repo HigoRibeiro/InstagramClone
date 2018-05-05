@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import {  View, Text, StyleSheet } from 'react-native';
+import {  View, Text, Image, StyleSheet } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Header extends Component {
   render() {
+
+    const { username, profile_picture } = this.props.user;
+
     return (
       <View style={styles.container}>
         <View style={styles.contentLeft}>
           <View style={styles.wrapperImage}>
-            <View style={styles.image}/>
+            <Image
+              style={styles.image}
+              source={{
+                uri: profile_picture,
+              }}
+            />
           </View>
-          <Text style={styles.text}>user</Text>
+          <Text style={styles.text}>{username}</Text>
         </View>
         <Icon name="ellipsis-v" size={14} />
       </View>
@@ -47,7 +55,6 @@ const styles = StyleSheet.create({
     borderRadius: 26,
     borderWidth: 1,
     borderColor: 'transparent',
-    backgroundColor: 'black',
   },
   text: {
     color: '#222',
